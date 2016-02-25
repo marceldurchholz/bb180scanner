@@ -21,7 +21,7 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-// package io.github.marceldurchholz.cordova.plugins.bb180scanner;
+package io.github.marceldurchholz.cordova.plugins.bb180scanner;
 
 import java.io.File;
 
@@ -52,8 +52,20 @@ public class bb180scanner extends CordovaPlugin {
 	 *            The callback context used when calling back into JavaScript.
 	 * @return boolean.
 	 */
+
+	private void _softScanOn(CallbackContext callbackContext) throws JSONException {
+		JSONObject errorObj = new JSONObject();
+		errorObj.put("status", PluginResult.Status.ERROR.ordinal());
+		errorObj.put("message", "File not found");
+		callbackContext.error(errorObj);
+	}
+
+
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		if (action.equals("open")) {
+		if (action.equals("softScanOn")) {
+			this._softScanOn(callbackContext);
+		} 
+		else if (action.equals("open")) {
 			this._open(args.getString(0), args.getString(1), callbackContext);
 		} 
 		else if (action.equals("uninstall")) {
