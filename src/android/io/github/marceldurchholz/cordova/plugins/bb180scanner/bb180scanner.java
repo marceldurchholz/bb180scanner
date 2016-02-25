@@ -344,9 +344,9 @@ public class bb180scanner extends CordovaPlugin {
 	}
 
 
-	private int mBarcodeHandle = -1;
-	private int mCount = 0;
-	private String[] STATUS_ARR = {STATUS_CLOSE, STATUS_OPEN, STATUS_TRIGGER_ON};
+	// private int mBarcodeHandle = -1;
+	// private int mCount = 0;
+	// private String[] STATUS_ARR = {STATUS_CLOSE, STATUS_OPEN, STATUS_TRIGGER_ON};
 
 
 	private void _softScanOn(String fileArg, String contentType, CallbackContext callbackContext) throws JSONException {
@@ -355,13 +355,13 @@ public class bb180scanner extends CordovaPlugin {
 		// errorObj.put("message", "File not found");
 		// callbackContext.error(errorObj);
 
-		Intent intent = new Intent();
+		// Intent intent = new Intent();
 		
-		mCount = 0;
-		intent.setAction(Constants.ACTION_BARCODE_OPEN);
-		if(mIsOpened) intent.putExtra(Constants.EXTRA_HANDLE, mBarcodeHandle);
-		intent.putExtra(Constants.EXTRA_INT_DATA3, 100);
-		sendBroadcast(intent);
+		// mCount = 0;
+		// intent.setAction(Constants.ACTION_BARCODE_OPEN);
+		// if(mIsOpened) intent.putExtra(Constants.EXTRA_HANDLE, mBarcodeHandle);
+		// intent.putExtra(Constants.EXTRA_INT_DATA3, 100);
+		// sendBroadcast(intent);
 		// mIsOpened = true;
 		// setResultText("BARCODE_OPEN");
 		// showProgressDialog(true);
