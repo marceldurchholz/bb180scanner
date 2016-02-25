@@ -28,7 +28,7 @@ function bb180scanner() {}
 
 bb180scanner.prototype.softScanOn = function (callbackContext) {
     callbackContext = callbackContext || {};
-    exec(callbackContext.success || null, callbackContext.error || null, 'bb180scanner', 'softScanOn');
+    exec(callbackContext.success || null, callbackContext.error || null, 'bb180scanner', 'softScanOn', [fileName, contentType]);
 };
 
 /*

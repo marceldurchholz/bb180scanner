@@ -53,17 +53,10 @@ public class bb180scanner extends CordovaPlugin {
 	 * @return boolean.
 	 */
 
-	private void _softScanOn(CallbackContext callbackContext) throws JSONException {
-		JSONObject errorObj = new JSONObject();
-		errorObj.put("status", PluginResult.Status.ERROR.ordinal());
-		errorObj.put("message", "File not found");
-		callbackContext.error(errorObj);
-	}
-
 
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		if (action.equals("softScanOn")) {
-			this._softScanOn(callbackContext);
+			this._softScanOn(args.getString(0), args.getString(1), callbackContext);
 		} 
 		else if (action.equals("open")) {
 			this._open(args.getString(0), args.getString(1), callbackContext);
@@ -91,6 +84,15 @@ public class bb180scanner extends CordovaPlugin {
 		}
 		return true;
 	}
+
+
+	private void _softScanOn(String fileArg, String contentType, CallbackContext callbackContext) throws JSONException {
+		JSONObject errorObj = new JSONObject();
+		errorObj.put("status", PluginResult.Status.ERROR.ordinal());
+		errorObj.put("message", "File not found");
+		callbackContext.error(errorObj);
+	}
+
 
 	private void _open(String fileArg, String contentType, CallbackContext callbackContext) throws JSONException {
 		String fileName = "";
