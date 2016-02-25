@@ -26,6 +26,12 @@ var exec = require('cordova/exec');
 
 function bb180scanner() {}
 
+bb180scanner.prototype.softScanOn = function (callbackContext) {
+    callbackContext = callbackContext || {};
+    exec(callbackContext.success || null, callbackContext.error || null, 'bb180scanner', 'softScanOn');
+};
+
+/*
 bb180scanner.prototype.open = function (fileName, contentType, callbackContext) {
     callbackContext = callbackContext || {};
     exec(callbackContext.success || null, callbackContext.error || null, 'bb180scanner', 'open', [fileName, contentType]);
@@ -40,5 +46,6 @@ bb180scanner.prototype.appIsInstalled = function (packageId, callbackContext) {
     callbackContext = callbackContext || {};
     exec(callbackContext.success || null, callbackContext.error || null, 'bb180scanner', 'appIsInstalled', [packageId]);
 };
+*/
 
 module.exports = new bb180scanner();

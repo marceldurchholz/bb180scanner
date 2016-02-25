@@ -52,10 +52,11 @@ public class bb180scanner extends CordovaPlugin {
 	 *            The callback context used when calling back into JavaScript.
 	 * @return boolean.
 	 */
-	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		if (action.equals("open")) {
-			this._open(args.getString(0), args.getString(1), callbackContext);
+	public boolean execute(CallbackContext callbackContext) throws JSONException {
+		if (action.equals("softScanOn")) {
+			this._softScanOn(callbackContext);
 		} 
+		/*
 		else if (action.equals("uninstall")) {
 			this._uninstall(args.getString(0), callbackContext);
 		}
@@ -71,6 +72,7 @@ public class bb180scanner extends CordovaPlugin {
 			}
 			callbackContext.success(successObj);
 		}
+		*/
 		else {
 			JSONObject errorObj = new JSONObject();
 			errorObj.put("status", PluginResult.Status.INVALID_ACTION.ordinal());
@@ -80,7 +82,19 @@ public class bb180scanner extends CordovaPlugin {
 		return true;
 	}
 
-	private void _open(String fileArg, String contentType, CallbackContext callbackContext) throws JSONException {
+	private void _softScanOn(CallbackContext callbackContext) throws JSONException {
+
+		// yo, get the scanner ;-)
+		// temporarely always throw an error for testing... 
+		// @TODO: further developing...
+		
+		JSONObject errorObj = new JSONObject();
+		errorObj.put("status", PluginResult.Status.ERROR.ordinal());
+		errorObj.put("message", "Activity not found: " + e.getMessage());
+		callbackContext.error(errorObj);
+
+
+		/*
 		String fileName = "";
 		try {
 			CordovaResourceApi resourceApi = webView.getResourceApi();
@@ -96,10 +110,8 @@ public class bb180scanner extends CordovaPlugin {
 				Intent intent = new Intent(Intent.ACTION_VIEW);
 				intent.setDataAndType(path, contentType);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				/*
-				 * @see
-				 * http://stackoverflow.com/questions/14321376/open-an-activity-from-a-cordovaplugin
-				 */
+				// @see
+				// http://stackoverflow.com/questions/14321376/softScanOn-an-activity-from-a-cordovaplugin
 				cordova.getActivity().startActivity(intent);
 				//cordova.getActivity().startActivity(Intent.createChooser(intent,"Open File in..."));
 				callbackContext.success();
@@ -115,8 +127,10 @@ public class bb180scanner extends CordovaPlugin {
 			errorObj.put("message", "File not found");
 			callbackContext.error(errorObj);
 		}
+		*/
 	}
 	
+	/*
 	private void _uninstall(String packageId, CallbackContext callbackContext) throws JSONException {
 		if (this._appIsInstalled(packageId)) {
 			Intent intent = new Intent(Intent.ACTION_UNINSTALL_PACKAGE);
@@ -150,5 +164,6 @@ public class bb180scanner extends CordovaPlugin {
 		}
 		return uriString;
 	}
+	*/
 
 }
