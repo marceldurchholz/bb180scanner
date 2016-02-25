@@ -57,6 +57,27 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
 import org.apache.cordova.CordovaResourceApi;
 
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.cordova.CordovaActivity;
+// import org.json.JSONArray;
+// import org.json.JSONException;
+// import org.json.JSONObject;
+
+// import android.content.Intent;
+// import android.net.Uri;
+import android.text.Html;
+
+// import org.apache.cordova.CallbackContext;
+// import org.apache.cordova.CordovaPlugin;
+// import org.apache.cordova.CordovaResourceApi;
+// import org.apache.cordova.PluginResult;
+
+
+
 public class BBAPI {
 	
 	//+ RESULT
