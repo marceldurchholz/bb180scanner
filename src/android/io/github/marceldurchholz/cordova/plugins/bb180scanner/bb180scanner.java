@@ -87,10 +87,14 @@ public class bb180scanner extends CordovaPlugin {
 
 
 	private void _softScanOn(String fileArg, String contentType, CallbackContext callbackContext) throws JSONException {
-		JSONObject errorObj = new JSONObject();
-		errorObj.put("status", PluginResult.Status.ERROR.ordinal());
-		errorObj.put("message", "File not found");
-		callbackContext.error(errorObj);
+		// JSONObject errorObj = new JSONObject();
+		// errorObj.put("status", PluginResult.Status.ERROR.ordinal());
+		// errorObj.put("message", "File not found");
+		// callbackContext.error(errorObj);
+		JSONObject successObj = new JSONObject();
+		successObj.put("status", PluginResult.Status.NO_RESULT.ordinal());
+		successObj.put("message", "This is a success message from native java backend");
+		callbackContext.success(successObj);
 	}
 
 
