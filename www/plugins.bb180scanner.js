@@ -3,7 +3,7 @@
 /*
 The MIT License (MIT)
 
-Copyright (c) 2013 pwlin - pwlin05@gmail.com
+Copyright (c) 2013 marceldurchholz - info@digitalverve.de
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -24,21 +24,21 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 var exec = require('cordova/exec');
 
-function FileOpener2() {}
+function bb180scanner() {}
 
-FileOpener2.prototype.open = function (fileName, contentType, callbackContext) {
+bb180scanner.prototype.open = function (fileName, contentType, callbackContext) {
     callbackContext = callbackContext || {};
-    exec(callbackContext.success || null, callbackContext.error || null, 'FileOpener2', 'open', [fileName, contentType]);
+    exec(callbackContext.success || null, callbackContext.error || null, 'bb180scanner', 'open', [fileName, contentType]);
 };
 
-FileOpener2.prototype.uninstall = function (packageId, callbackContext) {
+bb180scanner.prototype.uninstall = function (packageId, callbackContext) {
     callbackContext = callbackContext || {};
-    exec(callbackContext.success || null, callbackContext.error || null, 'FileOpener2', 'uninstall', [packageId]);
+    exec(callbackContext.success || null, callbackContext.error || null, 'bb180scanner', 'uninstall', [packageId]);
 };
 
-FileOpener2.prototype.appIsInstalled = function (packageId, callbackContext) {
+bb180scanner.prototype.appIsInstalled = function (packageId, callbackContext) {
     callbackContext = callbackContext || {};
-    exec(callbackContext.success || null, callbackContext.error || null, 'FileOpener2', 'appIsInstalled', [packageId]);
+    exec(callbackContext.success || null, callbackContext.error || null, 'bb180scanner', 'appIsInstalled', [packageId]);
 };
 
-module.exports = new FileOpener2();
+module.exports = new bb180scanner();

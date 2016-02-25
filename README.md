@@ -1,27 +1,27 @@
 Contributors
 ------------
-[@Gillardo](https://github.com/Gillardo/), [@TankOs](https://github.com/TankOs), [@Rovi23](https://github.com/Rovi23), [@josemanuelbd](https://github.com/josemanuelbd), [@ielcoro](https://github.com/ielcoro), [@keturn](https://github.com/keturn), [@conform](https://github.com/conform), [@guyc](https://github.com/guyc)
+[@MarcelDurchholz](https://github.com/MarcelDurchholz/)
 
 
-A File Opener Plugin for Cordova (The Original Version)
+BB180 Plugin for Cordova
 ==========================
-This plugin will open a file on your device file system with its default application.
+This plugin will make accessible the BB180 Scanner via cordova.
 
-Current Version: 2.0.2
+Current Version: 1.0.0
 ----------------
 
 Requirements
 -------------
-- Android 4 or higher / iOS 6 or higher / WP8
+- Android 4 or higher
 - Cordova 3.0 or higher
 
 Installation
 -------------
-    cordova plugin add cordova-plugin-file-opener2
+    cordova plugin add bb180scanner
     
 Usage
 ------
-    cordova.plugins.fileOpener2.open(
+    cordova.plugins.bb180scanner.open(
         filePath, 
         fileMIMEType, 
         {
@@ -34,14 +34,14 @@ Examples
 --------
 Open an APK install dialog:
 
-    cordova.plugins.fileOpener2.open(
+    cordova.plugins.bb180scanner.open(
         '/sdcard/Download/gmail.apk', 
         'application/vnd.android.package-archive'
     );
     
 Open a PDF document with the default PDF reader and optional callback object:
 
-    cordova.plugins.fileOpener2.open(
+    cordova.plugins.bb180scanner.open(
         '/sdcard/Download/starwars.pdf', // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
         'application/pdf', 
         { 
@@ -60,7 +60,7 @@ Notes
 - For properly opening _any_ file, you must already have a suitable reader for that particular file type installed on your device. Otherwise this will not work.
 
 
-- [It is reported](https://github.com/pwlin/cordova-plugin-file-opener2/issues/2#issuecomment-41295793) that in iOS, you might need to remove `<preference name="iosPersistentFileLocation" value="Library" />` from your `config.xml`
+- [It is reported](https://github.com/marceldurchholz/bb180scanner/issues/2#issuecomment-41295793) that in iOS, you might need to remove `<preference name="iosPersistentFileLocation" value="Library" />` from your `config.xml`
 
 - If you are wondering what MIME-type should you pass as the second argument to `open` function, [here is a list of all known MIME-types](http://svn.apache.org/viewvc/httpd/httpd/trunk/docs/conf/mime.types?view=co)
 
@@ -72,7 +72,7 @@ Additional Android Functions
 ###.uninstall(_packageId, callbackContext_)
 Uninstall a package with its id.
 
-    cordova.plugins.fileOpener2.uninstall('com.zynga.FarmVille2CountryEscape', {
+    cordova.plugins.bb180scanner.uninstall('com.zynga.FarmVille2CountryEscape', {
         error : function(e) {
             console.log('Error status: ' + e.status + ' - Error message: ' + e.message);    
         },
@@ -84,7 +84,7 @@ Uninstall a package with its id.
 ###.appIsInstalled(_packageId, callbackContext_)
 Check if an app is already installed.
 
-    cordova.plugins.fileOpener2.appIsInstalled('com.adobe.reader', {
+    cordova.plugins.bb180scanner.appIsInstalled('com.adobe.reader', {
         success : function(res) {
             if (res.status === 0) {
                 console.log('Adobe Reader is not installed.');
@@ -98,7 +98,7 @@ LICENSE
 --------
 The MIT License (MIT)
 
-Copyright (c) 2013 pwlin - pwlin05@gmail.com
+Copyright (c) 2013 marceldurchholz - info@digitalverve.de
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
