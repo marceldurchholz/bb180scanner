@@ -22,6 +22,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 // package io.github.marceldurchholz.cordova.plugins.bb180scanner;
+package com.bluefletch.bluebird.plugin;
 
 import java.io.File;
 
