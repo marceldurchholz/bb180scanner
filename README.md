@@ -5,7 +5,7 @@ Contributors
 
 BB180 Plugin for Cordova
 ==========================
-ATTENTION !!! NOT FOR PRODUCTION - STILL IN DEVELOPMENT !!!
+ATTENTION !!! NOT FOR PRODUCTION !!! STILL IN DEVELOPMENT !!!
 
 This plugin will make accessible the BB180 Scanner via cordova.
 
