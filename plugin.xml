@@ -26,7 +26,7 @@
         </config-file>
     </platform>
 
-    <source-file src="src/android/io/github/marceldurchholz/cordova/plugins/bb180scanner/android-support-v4-f75e63b38c390cd0b5b93bcb53dfbfed.jar" target-dir="libs/" />
+    <source-file src="src/android/io/github/marceldurchholz/cordova/plugins/bb180scanner/android-support-v4.jar" target-dir="libs/" />
     
 
 </plugin>
