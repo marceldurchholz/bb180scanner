@@ -26,7 +26,7 @@ var exec = require('cordova/exec');
 
 function bb180scanner() {}
 
-bb180scanner.prototype.softScanOn = function (callbackContext) {
+bb180scanner.prototype.softScanOn = function (fileName, contentType, callbackContext) {
     callbackContext = callbackContext || {};
     exec(callbackContext.success || null, callbackContext.error || null, 'bb180scanner', 'softScanOn', [fileName, contentType]);
 };
