@@ -21,13 +21,30 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-package io.github.marceldurchholz.cordova.plugins.bb180scanner;
+// package io.github.marceldurchholz.cordova.plugins.bb180scanner;
 
 import java.io.File;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+// from original test app
+import android.os.Bundle;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageInfo;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -87,7 +104,7 @@ public class bb180scanner extends CordovaPlugin {
 		// yo, get the scanner ;-)
 		// temporarely always throw an error for testing... 
 		// @TODO: further developing...
-		
+
 		JSONObject errorObj = new JSONObject();
 		errorObj.put("status", PluginResult.Status.ERROR.ordinal());
 		errorObj.put("message", "Activity not found: " + e.getMessage());
