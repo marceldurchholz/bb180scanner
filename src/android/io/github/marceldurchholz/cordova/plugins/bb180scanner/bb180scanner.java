@@ -57,7 +57,6 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
 import org.apache.cordova.CordovaResourceApi;
 
-/*
 public class BBAPI {
 	
 	//+ RESULT
@@ -232,7 +231,13 @@ public class BBAPI {
 }
 
 
+/*public class Constants {
+	
+	// src/android/io/github/marceldurchholz/cordova/plugins/bb180scanner/bb180scanner
+	// public static final String ACTION_BARCODE_OPEN = "src.android.io.github.marceldurchholz.cordova..BARCODE_OPEN";
 
+}
+*/
 
 public class Constants {
 	
@@ -269,7 +274,7 @@ public class Constants {
 	public static final int ERROR_BARCODE_ERROR_USE_TIMEOUT			= -7;
 	public static final int ERROR_BARCODE_ERROR_ALREADY_OPENED		= -8;
 }
-*/
+
 
 public class bb180scanner extends CordovaPlugin {
 
@@ -318,14 +323,32 @@ public class bb180scanner extends CordovaPlugin {
 	}
 
 
+	private int mBarcodeHandle = -1;
+	private int mCount = 0;
+	private String[] STATUS_ARR = {STATUS_CLOSE, STATUS_OPEN, STATUS_TRIGGER_ON};
+
+
 	private void _softScanOn(String fileArg, String contentType, CallbackContext callbackContext) throws JSONException {
 		// JSONObject errorObj = new JSONObject();
 		// errorObj.put("status", PluginResult.Status.ERROR.ordinal());
 		// errorObj.put("message", "File not found");
 		// callbackContext.error(errorObj);
+
+		Intent intent = new Intent();
+		
+		mCount = 0;
+		intent.setAction(Constants.ACTION_BARCODE_OPEN);
+		if(mIsOpened) intent.putExtra(Constants.EXTRA_HANDLE, mBarcodeHandle);
+		intent.putExtra(Constants.EXTRA_INT_DATA3, 100);
+		sendBroadcast(intent);
+		// mIsOpened = true;
+		// setResultText("BARCODE_OPEN");
+		// showProgressDialog(true);
+		// break;
+
 		JSONObject successObj = new JSONObject();
 		successObj.put("status", PluginResult.Status.NO_RESULT.ordinal());
-		successObj.put("message", "This is a success message from native java backend");
+		successObj.put("message", "This is a success message from native java backend: " + Constants.ACTION_BARCODE_OPEN);
 		callbackContext.success(successObj);
 	}
 
