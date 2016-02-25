@@ -57,7 +57,7 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
 import org.apache.cordova.CordovaResourceApi;
 
-
+/*
 public class BBAPI {
 	
 	//+ RESULT
@@ -269,6 +269,7 @@ public class Constants {
 	public static final int ERROR_BARCODE_ERROR_USE_TIMEOUT			= -7;
 	public static final int ERROR_BARCODE_ERROR_ALREADY_OPENED		= -8;
 }
+*/
 
 public class bb180scanner extends CordovaPlugin {
 
